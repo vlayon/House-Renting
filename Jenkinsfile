@@ -4,17 +4,17 @@ pipeline{
     stages{
         stage("Restore project"){
             steps{
-                bar "dotnet restore"
+                bat "dotnet restore"
             }
         }
         stage("Build project"){
             steps{
-                bar "dotnet build --no-restore"
+                bat "dotnet build --no-restore"
             }
         }
         stage("Run tests"){
             steps{
-                bar "dotnet test --no-build --verbosity normal"
+                bat "dotnet test --no-build --verbosity normal"
             }
         }
     }    
